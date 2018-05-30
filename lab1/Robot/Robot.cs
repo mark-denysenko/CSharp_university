@@ -8,7 +8,7 @@ namespace Robot_Program
         Point startPosition;
         Point currentPosition;
         Direction direction;
-        List<Point> way;
+        //List<Point> way;
 
         public Point Position
         {
@@ -24,6 +24,10 @@ namespace Robot_Program
             {
                 return direction;
             }
+            set
+            {
+                direction = value;
+            }
         }
 
         public Robot():
@@ -33,7 +37,7 @@ namespace Robot_Program
         {
             startPosition = p;
             currentPosition = startPosition;
-            way.Add(currentPosition);
+            //way.Add(currentPosition);
             direction = d;
         }
 
@@ -56,6 +60,48 @@ namespace Robot_Program
             }
 
             return true;
+        }
+
+        public void TurnRight()                     // + Pi/2
+        {
+            direction += 90;
+
+            if((int)direction == 360)
+            {
+                direction = Direction.Right;
+            }
+        }
+
+        public void TurnLeft()                      // - Pi/2
+        {
+            switch(direction)
+            {
+                case Direction.Right:
+                    direction = Direction.Up;
+                    break;
+                case Direction.Down:
+                    direction = Direction.Right;
+                    break;
+                case Direction.Left:
+                    direction = Direction.Down;
+                    break;
+                case Direction.Up:
+                    direction = Direction.Left;
+                    break;
+            }
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Robot postion ({currentPosition.x},{currentPosition.y}), direction ({direction.ToString()})");
+        }
+
+        public Robot DeepCopy()
+        {
+            Robot tmp = new Robot(startPosition.DeepCopy(), direction);
+            tmp.currentPosition = this.currentPosition.DeepCopy();
+
+            return tmp;
         }
     }
 }

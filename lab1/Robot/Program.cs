@@ -29,10 +29,21 @@ namespace Robot_Program
 
             Console.Write("Input points for generating: ");
             testField.GeneratePoints(Convert.ToInt32(Console.ReadLine()));
-
             testField.Output();
 
             Robot testRobot = MakeRobot(testField);
+            testRobot.ShowInfo();
+            testField.Output(testRobot);
+
+            Console.WriteLine("Way (only special achieved points): ");
+            if(testField.Check(testRobot))
+            {
+                Console.WriteLine("YES, robot can go across all points!");
+            }
+            else
+            {
+                Console.WriteLine("NO, robot can't go across all points!");
+            }
 
         }
 
@@ -48,7 +59,7 @@ namespace Robot_Program
 
         static Direction ReadDirection()
         {
-            Console.Write("Input direction: ");
+            Console.Write("Input direction (up - u, left - l, down - d, right - r): ");
             string dir = Console.ReadLine();
 
             switch(dir[0])

@@ -31,5 +31,10 @@ namespace Robot_Program
 
             return (x == p.x) && (y == p.y);
         }
+
+        public Point DeepCopy()
+        {
+            return new Point(this.x, this.y);
+        }
     }
 }
