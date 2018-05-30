@@ -31,6 +31,19 @@ namespace Robot_Program
             generator = new Random();
         }
 
+        /* Probably for a litle fields it can be solv recursively
+         *      Check(Robot rob)
+         *          while(pointCounter != valueOfPoints)
+         *              GoToPoint(rob))
+         *              ChangeDirection(rob)       <-- in this func we make 2 copies for two turns and 
+         *                                             call for each Check again. 
+         */
+
+        /// <summary>
+        /// Main method of program. Calculate possibility to achieve all generated points
+        /// </summary>
+        /// <param name="rob">Robot with start point and direction, which should achieve all points</param>
+        /// <returns>return true if it possible or false in all another conditions</returns>
         public bool Check(Robot rob)
         {
             int pointCounter = 0;
@@ -101,14 +114,6 @@ namespace Robot_Program
                 }
             }
         }
-
-        //public bool Check(Point startPosition, Direction startDirection)
-        //{
-        //    int pointCounter = 0;
-
-        //    if (startPosition.Equals())
-        //    return true;
-        //}
 
         public Robot GenerateRobot(Direction d = Direction.Default)
         {
