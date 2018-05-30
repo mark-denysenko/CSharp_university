@@ -65,13 +65,13 @@ Programs for university`s course of C#
     Події реєструються в спеціальних класах-слухачах.
     
   h)	Реалізувати обробку помилок, при цьому необхідно перевизначити за допомогою наслідування наступні події: 
-    1) StackOverflowException 
-    2) ArrayTypeMismatchException 
-    3) DivideByZeroException 
-    4) IndexOutOfRangeException 
-    5) InvalidCastException 
-    6) OutOfMemoryException 
-    7) OverflowException 
+    - StackOverflowException
+    - ArrayTypeMismatchException
+    - DivideByZeroException
+    - IndexOutOfRangeException
+    - InvalidCastException
+    - OutOfMemoryException 
+    - OverflowException 
     
   i)	Підготувати демонстраційний приклад, в котрому будуть використані всі розроблені методи
   
