@@ -45,8 +45,8 @@ namespace Numbers
             Console.WriteLine($" {n2} * {n4} = {n2 * n4}");
 
             Console.WriteLine("\tTesting equals and operators ==, !=");
-            Integer n11 = n1.Copy() as Integer;
-            Real n33 = n3.Copy() as Real;
+            Integer n11 = n1.Clone() as Integer;
+            Real n33 = n3.Clone() as Real;
 
             Console.WriteLine($" {n1} == {n11} -> {n1 == n11}");
             Console.WriteLine($" {n1} == {n2} -> {n1 == n2}");

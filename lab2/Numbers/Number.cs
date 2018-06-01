@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Numbers
 {
-    abstract class Number
+    abstract class Number : ICloneable
     {
         public abstract int ToInt();
         public abstract double ToDouble();
 
-        public virtual Number Copy()
+        public object Clone()
         {
-            return (Number)this.MemberwiseClone();
+            return this.MemberwiseClone();
         }
 
         #region Basic functions (abstract)

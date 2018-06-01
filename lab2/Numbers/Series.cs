@@ -46,7 +46,7 @@ namespace Numbers
 
             foreach(var item in numbers)
             {
-                clone.Add((T)item.Copy());
+                clone.Add((T)item.Clone());
             }
 
             return clone;
