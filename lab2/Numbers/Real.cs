@@ -44,7 +44,7 @@ namespace Numbers
                 return false;
             }
 
-            return this.GetHashCode() == (obj as Integer).GetHashCode();
+            return this.GetHashCode() == (obj as Real).GetHashCode();
         }
 
         public override string ToString()

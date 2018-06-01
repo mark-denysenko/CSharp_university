@@ -25,11 +25,15 @@ namespace Numbers
 
         static void ArithmeticTest()
         {
+            Console.WriteLine("\tTesting arithmetic operators:");
             Integer n1 = new Integer(5);
             Integer n2 = new Integer(10);
 
             Real n3 = new Real(7.5);
             Real n4 = new Real(3.5);
+
+            Console.WriteLine($"Get hashcode {n2} -> {n2.GetHashCode()}");
+            Console.WriteLine($"Get hashcode {n3} -> {n3.GetHashCode()}");
 
             Console.WriteLine($" {n1} + {n2} = {n1 + n2}");
             Console.WriteLine($" {n3} - {n4} = {n3 - n4}");
@@ -39,10 +43,20 @@ namespace Numbers
             Console.WriteLine($" {n1} * {n2} = {n1 * n2}");
             Console.WriteLine($" {n3} / {n4} = {n3 / n4}");
             Console.WriteLine($" {n2} * {n4} = {n2 * n4}");
+
+            Console.WriteLine("\tTesting equals and operators ==, !=");
+            Integer n11 = n1.Copy() as Integer;
+            Real n33 = n3.Copy() as Real;
+
+            Console.WriteLine($" {n1} == {n11} -> {n1 == n11}");
+            Console.WriteLine($" {n1} == {n2} -> {n1 == n2}");
+            Console.WriteLine($" {n3} != {n33} -> {n3 != n33}");
+            Console.WriteLine($" {n3} != {n1} -> {n3 != n1}");
         }
 
         static void ColectionTest()
         {
+            Console.WriteLine("\tTesting collection Series");
             Series<Integer> testSeries = new Series<Integer>();
 
             for (int i = 0; i < 10; i++)
@@ -66,6 +80,7 @@ namespace Numbers
             Console.WriteLine("First collection without changing");
             testSeries.ShowInfo();
 
+            Console.WriteLine("\tTesting Exceptions");
             try
             {
                 testSeries.Delete(11);
